@@ -12,12 +12,11 @@ const userInput = document.getElementById("user-number");
 const resultElement = document.getElementById("result");
 const inputbtn = document.getElementById("input-button");
 
-const userNumber = userInput.value;
-console.log(userNumber);
-
 // costrutto if
 
 inputbtn.addEventListener("click", function () {
+  const userNumber = userInput.value;
+
   if (userNumber > 6 || isNaN(userNumber)) {
     alert("Il valore inserito non é corretto");
   }
