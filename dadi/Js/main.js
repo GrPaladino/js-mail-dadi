@@ -10,15 +10,24 @@
 // - recuperare i dati dal DOM
 const userInput = document.getElementById("user-number");
 const resultElement = document.getElementById("result");
+const inputbtn = document.getElementById("input-button");
 
 const userNumber = userInput.value;
-const generatedNumber = Math.round(Math.random() * 100);
-console.log(generatedNumber);
+console.log(userNumber);
 
 // costrutto if
 
-if (userNumber > generatedNumber) {
-  resultElement.innerText = "hai vinto";
-} else {
-  resultElement.innerText = "hai perso";
-}
+inputbtn.addEventListener("click", function () {
+  if (userNumber > 6 || isNaN(userNumber)) {
+    alert("Il valore inserito non é corretto");
+  }
+
+  const generatedNumber = Math.round(Math.random() * 6 + 1);
+  console.log(generatedNumber);
+
+  if (userNumber > generatedNumber) {
+    resultElement.innerText = "hai vinto";
+  } else {
+    resultElement.innerText = "hai perso";
+  }
+});
