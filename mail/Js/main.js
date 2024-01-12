@@ -10,6 +10,7 @@ const emails = ["ciao@ciao.it", "arrivederci@ciao.it", "emailcorretta@ciao.it"];
 inputBtn.addEventListener("click", function () {
   const userMail = userInput.value;
   console.log(1);
+
   let found = false;
 
   for (let i = 0; i < emails.length; i++) {
@@ -21,12 +22,17 @@ inputBtn.addEventListener("click", function () {
   }
 
   let message = "";
+  let valid = "is-valid";
 
   if (found == true) {
-    message = "benvenuto";
+    message = "Benvenuto";
   } else {
-    message = "Hai sbagliato";
+    message = "L'indirizzo inserito non é valido!!!";
+    valid = "is-invalid";
   }
+
   resultElement.innerText = message;
   console.log(message);
+
+  userInput.classList.add(valid);
 });
